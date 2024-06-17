@@ -1,5 +1,4 @@
-<body>
-    <h1>Web App Monitoring with Selenium and Ubuntu Notifications</h1>
+<h1>Web App Monitoring with Selenium and Ubuntu Notifications</h1>
 
     <h2>Requirements</h2>
     <ul>
@@ -69,5 +68,3 @@
         <li>Ensure that the user running the script (<code>monitor_webapp.py</code>) has appropriate permissions and access to the ChromeDriver executable, as well as the ability to send Ubuntu notifications (<code>notify-send</code>).</li>
         <li>Monitor logs and notifications to ensure the script is functioning correctly, especially after system reboots or updates.</li>
     </ul>
-</body>
-</html>
