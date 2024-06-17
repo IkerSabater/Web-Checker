@@ -5,10 +5,10 @@ from selenium.webdriver.chrome.options import Options
 import time
 import subprocess
 
-driverURL = '/usr/local/bin/chromedriver'
-navbar_id = 'divalNavbar'
-url = "https://formacion.dival.es"
-appName = 'DIVAL'
+driverURL = '/path/to/driver'
+navbar_id = 'navbar_id'
+url = "https://example.com"
+appName = 'Web App'
 
 def send_ubuntu_notification(title, message):
     subprocess.run(['notify-send', title, message])
@@ -35,10 +35,10 @@ def check_navbar_presence(url, navbar_id):
         try:
             navbar = driver.find_element(By.ID, navbar_id)
             if navbar:
-                print(f"Dival is runing")
+                print(f"App is runing")
                 return True
         except Exception as e:
-            print(f"Dival is not runing")
+            print(f"App is not runing")
             return False
     except Exception as e:
         print(f"An error occurred: {e}")
