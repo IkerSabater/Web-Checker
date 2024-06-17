@@ -33,10 +33,15 @@ Clone or download this repository to your local machine where you want to run th
   - `url`: URL of the web application you want to monitor.
   - `appName`: Name of your web application (for notifications).
 
-7. **Move the Script to `/etc/systemd/system`:**
-Copy or move `monitor_webapp.py` to the directory `/etc/systemd/system/`:
-   ```bash
-   sudo cp monitor_webapp.py /etc/systemd/system/
+7. **Configure the service:**
+- Update the following data:
+  - The URL in `ExecStart`
+  - The URL in `WotkingDirecotry`
+  - The User
+
+8. **Move the Service**
+- ```bash
+  sudo mv dival-status.service /etc/systemd/system/
 
 9. **Reload Systemd Daemon:**
 After moving the script, reload the systemd daemon to update its configuration:
