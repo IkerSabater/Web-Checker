@@ -47,6 +47,7 @@ After moving the script, reload the systemd daemon to update its configuration:
 Start the monitoring service:
    ```bash
    sudo systemctl start dival-status.service
+   ```
 Enable the service to start automatically on boot:
    ```bash
    sudo systemctl enable dival-status.service
