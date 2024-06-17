@@ -11,19 +11,21 @@
    If Python is not already installed, download and install it from [python.org](https://www.python.org/).
 
 2. **Install Selenium:**
+   ```bash
    pip install selenium
 
-3. **Install ChromeDriver:**
+4. **Install ChromeDriver:**
 - Download the ChromeDriver executable suitable for your Chrome browser version from [ChromeDriver Downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 - Place the executable in a directory accessible by your Python script. Update the `driverURL` variable in the script (`monitor_webapp.py`) with the correct path to the ChromeDriver executable.
 
 4. **Install `notify-send` (for Ubuntu):**
+    ```bash
    sudo apt-get install libnotify-bin
 
-5. **Clone the Repository:**
+6. **Clone the Repository:**
 Clone or download this repository to your local machine where you want to run the monitoring script.
 
-6. **Configure the Script:**
+7. **Configure the Script:**
 - Open `monitor_webapp.py` in a text editor.
 - Update the following variables in the script:
   - `driverURL`: Path to the ChromeDriver executable.
@@ -33,19 +35,22 @@ Clone or download this repository to your local machine where you want to run th
 
 7. **Move the Script to `/etc/systemd/system`:**
 Copy or move `monitor_webapp.py` to the directory `/etc/systemd/system/`:
+   ```bash
    sudo cp monitor_webapp.py /etc/systemd/system/
 
-8. **Reload Systemd Daemon:**
+9. **Reload Systemd Daemon:**
 After moving the script, reload the systemd daemon to update its configuration:
+   ```bash
    sudo systemctl daemon-reload
 
-9. **Start and Enable the Service:**
+10. **Start and Enable the Service:**
 Start the monitoring service:
+   ```bash
    sudo systemctl start dival-status.service
 Enable the service to start automatically on boot:
-   ´´´bash
+   ```bash
    sudo systemctl enable dival-status.service
-   ´´´
+   ```
 ## Usage
 - After completing the setup, the script will monitor the specified web application (`url`) and notify you via Ubuntu notifications regarding its status.
 - Adjust the `check_interval` variable in `monitor_webapp.py` to change how often the script checks the status of the web application.
